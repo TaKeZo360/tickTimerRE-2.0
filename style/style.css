@@ -34,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-y: hidden;
   background-color: var(--rich-bg);
   font-family: Arial, Helvetica, sans-serif;
 }
