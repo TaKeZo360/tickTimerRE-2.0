@@ -199,9 +199,9 @@ body {
 
 .marked-times.open {
   width: 50%;
+  height: 100dvh;
   height: 100vh;
   background: var(--rich-surface);
-  box-shadow: var(--shadow-md);
 }
 
 #history {
@@ -222,6 +222,7 @@ body {
 
 #history.open {
   width: 50%;
+  height: 100dvh;
   height: 100vh;
 }
 
@@ -282,16 +283,18 @@ body {
   transition: opacity 1s ease, transform 1s ease;
   animation: slideRight 1s ease;
 }
+
 .reverse {
   animation: slideRight 1s reverse forwards;
 }
 
-@keyframes slideRight{
-  0%{
+@keyframes slideRight {
+  0% {
     transform: translateX(20vw);
     opacity: 0;
   }
-  100%{
+  
+  100% {
     transform: translateX(0);
     opacity: 1;
   }
