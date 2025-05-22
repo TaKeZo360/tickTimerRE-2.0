@@ -51,6 +51,7 @@ body {
   align-items: center;
   gap: 10px;
   position: relative;
+  transform: translateY(-7vh);
   z-index: 100;
 }
 
