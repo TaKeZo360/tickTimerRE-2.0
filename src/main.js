@@ -70,7 +70,7 @@ const stopWatch = {
         
         const markEl = document.createElement('p');
         markEl.classList.add(`pClassNo${pClassNo}`);
-        markEl.textContent = `${min.textContent}:${sec.textContent}:${ms.textContent}`;
+        markEl.textContent = `${min.textContent} : ${sec.textContent} : ${ms.textContent}`;
         markTime.appendChild(markEl);
         pClassNo += 1;
         
