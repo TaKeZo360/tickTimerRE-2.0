@@ -280,6 +280,9 @@ body {
   transition: opacity 1s ease, transform 1s ease;
   animation: slideRight 1s ease;
 }
+.reverse {
+  animation: slideRight 1s reverse forwards;
+}
 
 @keyframes slideRight{
   0%{

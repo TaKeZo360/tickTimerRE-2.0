@@ -2,11 +2,14 @@
 const buttons = document.querySelector('.buttons');
 const settings = document.getElementById('stopw-settings');
 const startBtn = document.getElementById('stopw-start');
+
 // History
 const historyBTN = document.getElementById('history');
 const markTime = document.querySelector('.marked-times');
-// Erros
+
+// Errors
 const alertBox = document.querySelector('.alert-box');
+
 // Times
 const ms = document.getElementById('milliseconds');
 const sec = document.getElementById('seconds');
@@ -57,28 +60,25 @@ const stopWatch = {
             errorUpdates('Start Required');
             return;
         }
+        
         markClick = true;
         
-        // Remove previous class
         if (pClassNo !== 0) {
             const prevEl = document.querySelector(`.pClassNo${pClassNo - 1}`);
             if (prevEl) prevEl.classList.remove(`pClassNo${pClassNo - 1}`);
         }
         
-        // Create new mark element
         const markEl = document.createElement('p');
         markEl.classList.add(`pClassNo${pClassNo}`);
         markEl.textContent = `${min.textContent}:${sec.textContent}:${ms.textContent}`;
         markTime.appendChild(markEl);
         pClassNo += 1;
         
-        // Update history button
         if (!arrowAdded) {
             historyBTN.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
             arrowAdded = true;
         }
         
-        // Scroll when time added
         markTime.scrollTo({ top: markTime.scrollHeight, behavior: 'smooth' });
     },
     
@@ -121,7 +121,6 @@ buttons.addEventListener('click', (e) => {
                 return;
             }
             stopWatch.reset();
-            console.log('reset');
             break;
         case 'stopw-start':
             if (!timerStarted) {
@@ -154,17 +153,15 @@ historyBTN.addEventListener('click', () => {
     }
 });
 
-
-// error notices
 function errorUpdates(text = 'Error', color = '#B80000') {
     alertBox.innerHTML = `
-    <div class="error-alert">
-        <p style='color: ${color}'>${text}</p>
-    </div>
+        <div class="error-alert">
+            <p style='color: ${color}'>${text}</p>
+        </div>
     `;
     
-    setTimeout(()=> {
-        alertBox.style.opacity = '0';
-        alertBox.style.transform = 'translateX(20vw)'
-    }, 2000)
+    setTimeout(() => {
+    let error = document.querySelector('.error-alert');
+    error.style.transform = 'translateX(50vw)';
+}, 2000);
 }
